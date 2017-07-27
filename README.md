@@ -12,10 +12,13 @@ that sheds light on **opacity** and helps increase transparency in budgets and p
 ##### Chicago
 
 * **Chicago Public Schools (CPS)**
+  - resources: 
+    http://cps.edu/FY16Budget/Pages/FY16Budget.aspx
+    http://cps.edu/FY17Budget/Pages/FY17Budget.aspx
+    http://cps.edu/FY18Budget/Pages/FY18Budget.aspx
   - see opacity.us.il.chicago.cps.clj
   ```clojure
   ; Load 2018 simple school 2018 budget data (courtesy Chicago Sun Times)
-  ; There is detailed CPS budget information at their website (requires login)
   (def cps (load-cps-budget (str resources "cps-budget-2018.txt")))
 
    ; Determine student budget by school
@@ -24,7 +27,7 @@ that sheds light on **opacity** and helps increase transparency in budgets and p
    ; Sort descending
    (def sorted_budget (ct/sort-map-by-value school_student_budget))
  
-   ; Top 50 largest student budgets schools
+   ; Top 50 (of 643 listed) largest student budgets schools
    (pprint (take 50 sorted_budget))
  
    (["BLAIR" 47786.92957746479]
